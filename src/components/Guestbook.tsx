@@ -123,13 +123,13 @@ export default function Guestbook() {
           viewport={{ once: true }}
           transition={{ delay: 0.2, duration: 0.6 }}
         >
-          <div className="flex gap-2 mb-3">
+          <div className="grid grid-cols-2 gap-2 mb-3">
             <input
               type="text"
               value={name}
               onChange={(e) => setName(e.target.value)}
               placeholder="이름"
-              className="flex-1 px-3.5 py-2.5 bg-light-beige rounded-xl text-[13px] text-soft-black
+              className="w-full px-3.5 py-2.5 bg-light-beige rounded-xl text-[13px] text-soft-black
                          outline-none focus:ring-1 focus:ring-gold-beige/50 transition-shadow"
               required
             />
@@ -138,7 +138,7 @@ export default function Guestbook() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               placeholder="비밀번호"
-              className="flex-1 px-3.5 py-2.5 bg-light-beige rounded-xl text-[13px] text-soft-black
+              className="w-full px-3.5 py-2.5 bg-light-beige rounded-xl text-[13px] text-soft-black
                          outline-none focus:ring-1 focus:ring-gold-beige/50 transition-shadow"
               required
             />

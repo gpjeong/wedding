@@ -37,9 +37,11 @@ npm run dev
 ### 빌드 및 배포
 
 ```bash
-npm run build
+npm run build    # 프로덕션 빌드
 npm run deploy   # GitHub Pages 배포
 ```
+
+배포 URL: https://gpjeong.github.io/wedding/
 
 ## 프로젝트 구조
 
@@ -170,7 +172,7 @@ features: {
 
 1. [Kakao Developers](https://developers.kakao.com)에서 앱 등록
 2. 플랫폼 → Web → 사이트 도메인 추가 (개발: `http://localhost:5174`, 배포: GitHub Pages URL)
-3. **JavaScript 키**를 `wedding.ts`의 `kakao.jsKey`와 `index.html`의 Kakao Maps SDK `appkey`에 입력
+3. **JavaScript 키**를 `wedding.ts`의 `kakao.jsKey`와 `index.html`의 Kakao SDK에 입력
 
 ### Google Sheets 연동 (RSVP/방명록 자동 동기화)
 
