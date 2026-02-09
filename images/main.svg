@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="800" viewBox="0 0 600 800">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="50%" y2="100%">
+      <stop offset="0%" style="stop-color:#F5EDE3"/>
+      <stop offset="40%" style="stop-color:#EEDCC8"/>
+      <stop offset="100%" style="stop-color:#E0CBAF"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="40%" r="50%">
+      <stop offset="0%" style="stop-color:#D4A574;stop-opacity:0.2"/>
+      <stop offset="100%" style="stop-color:#D4A574;stop-opacity:0"/>
+    </radialGradient>
+    <linearGradient id="goldLine" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#C9956B;stop-opacity:0"/>
+      <stop offset="50%" style="stop-color:#C9956B;stop-opacity:0.5"/>
+      <stop offset="100%" style="stop-color:#C9956B;stop-opacity:0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="600" height="800" fill="url(#bg)"/>
+  <rect width="600" height="800" fill="url(#glow)"/>
+
+  <!-- Large decorative circle -->
+  <circle cx="300" cy="400" r="250" fill="none" stroke="#C9956B" stroke-width="0.4" opacity="0.2"/>
+  <circle cx="300" cy="400" r="200" fill="none" stroke="#C9956B" stroke-width="0.6" opacity="0.15"/>
+
+  <!-- Elegant border frame -->
+  <rect x="50" y="50" width="500" height="700" rx="0" fill="none" stroke="#C9956B" stroke-width="0.6" opacity="0.25"/>
+  <rect x="60" y="60" width="480" height="680" rx="0" fill="none" stroke="#C9956B" stroke-width="0.3" opacity="0.2"/>
+
+  <!-- Top ornament -->
+  <line x1="200" y1="100" x2="400" y2="100" stroke="url(#goldLine)" stroke-width="1"/>
+  <circle cx="300" cy="100" r="4" fill="#C9956B" opacity="0.3"/>
+  <circle cx="250" cy="100" r="2" fill="#C9956B" opacity="0.2"/>
+  <circle cx="350" cy="100" r="2" fill="#C9956B" opacity="0.2"/>
+
+  <!-- Decorative arch -->
+  <path d="M180 300 Q300 180 420 300" fill="none" stroke="#C9956B" stroke-width="0.6" opacity="0.2"/>
+  <path d="M200 310 Q300 200 400 310" fill="none" stroke="#C9956B" stroke-width="0.4" opacity="0.15"/>
+
+  <!-- Center content area -->
+  <text x="300" y="370" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="14" fill="#8B7355" letter-spacing="8" opacity="0.5">WEDDING</text>
+
+  <line x1="220" y1="385" x2="380" y2="385" stroke="url(#goldLine)" stroke-width="0.8"/>
+
+  <text x="300" y="420" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="30" fill="#3D3D3D" letter-spacing="2" opacity="0.7">Main Photo</text>
+
+  <line x1="220" y1="440" x2="380" y2="440" stroke="url(#goldLine)" stroke-width="0.8"/>
+
+  <text x="300" y="470" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" fill="#8B7355" letter-spacing="4" font-style="italic" opacity="0.4">Placeholder</text>
+
+  <!-- Bottom ornament -->
+  <path d="M240 520 Q260 540 300 530 Q340 540 360 520" fill="none" stroke="#C9956B" stroke-width="0.6" opacity="0.25"/>
+  <circle cx="300" cy="530" r="2" fill="#C9956B" opacity="0.2"/>
+
+  <!-- Bottom decorative line -->
+  <line x1="200" y1="700" x2="400" y2="700" stroke="url(#goldLine)" stroke-width="1"/>
+  <circle cx="300" cy="700" r="4" fill="#C9956B" opacity="0.3"/>
+
+  <!-- Scattered decorative dots -->
+  <circle cx="100" cy="200" r="2" fill="#C9956B" opacity="0.15"/>
+  <circle cx="500" cy="250" r="2.5" fill="#8B7355" opacity="0.12"/>
+  <circle cx="130" cy="550" r="2" fill="#C9956B" opacity="0.15"/>
+  <circle cx="470" cy="580" r="2" fill="#8B7355" opacity="0.12"/>
+  <circle cx="150" cy="350" r="1.5" fill="#C9956B" opacity="0.18"/>
+  <circle cx="450" cy="400" r="1.5" fill="#C9956B" opacity="0.18"/>
+</svg>
