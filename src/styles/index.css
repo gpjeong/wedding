@@ -1,0 +1,132 @@
+@import "tailwindcss";
+
+@theme {
+  /* Colors - Amalfi Concept */
+  --color-ivory: #FFF8F0;
+  --color-soft-black: #3D3D3D;
+  --color-gold-beige: #C9956B;
+  --color-warm-brown: #8B7355;
+  --color-light-beige: #F5EDE3;
+  --color-deep-ivory: #F0E6D8;
+
+  /* Fonts */
+  --font-serif: "Gowun Batang", "Noto Serif KR", serif;
+  --font-sans: "Noto Sans KR", sans-serif;
+  --font-display: "Cormorant Garamond", serif;
+}
+
+/* Base reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -webkit-text-size-adjust: 100%;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--color-soft-black);
+  background-color: #e8e0d6;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
+  font-size: 16px;
+  letter-spacing: -0.02em;
+}
+
+/* App container - mobile centered */
+#root {
+  max-width: 430px;
+  margin: 0 auto;
+  background-color: var(--color-ivory);
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+  box-shadow: 0 0 60px rgba(0, 0, 0, 0.1);
+}
+
+/* Safe area support */
+@supports (padding-top: env(safe-area-inset-top)) {
+  body {
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}
+
+/* Typography */
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+/* Section divider ornament */
+.ornament {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 0 auto;
+}
+
+.ornament::before,
+.ornament::after {
+  content: '';
+  width: 40px;
+  height: 0.5px;
+  background-color: var(--color-gold-beige);
+  opacity: 0.6;
+}
+
+/* Toast notification */
+.toast-enter {
+  animation: toastIn 0.3s ease-out forwards;
+}
+
+.toast-exit {
+  animation: toastOut 0.3s ease-in forwards;
+}
+
+@keyframes toastIn {
+  from { opacity: 0; transform: translateX(-50%) translateY(20px); }
+  to { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+
+@keyframes toastOut {
+  from { opacity: 1; transform: translateX(-50%) translateY(0); }
+  to { opacity: 0; transform: translateX(-50%) translateY(20px); }
+}
+
+/* Smooth image rendering */
+img {
+  image-rendering: -webkit-optimize-contrast;
+}
+
+/* Input placeholder styling */
+input::placeholder,
+textarea::placeholder {
+  color: #b5a898;
+}
+
+/* Select styling */
+select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%238B7355' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+}
+
+/* Petal colors */
+.petal-pink { color: #f4c2c2; }
+.petal-peach { color: #fde3d0; }
