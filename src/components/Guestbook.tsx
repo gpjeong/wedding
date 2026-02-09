@@ -117,7 +117,7 @@ export default function Guestbook() {
         {/* Write form */}
         <motion.form
           onSubmit={handleSubmit}
-          className="mb-8 bg-ivory rounded-2xl p-5"
+          className="mb-8 bg-ivory rounded-2xl p-5 overflow-hidden"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -129,7 +129,7 @@ export default function Guestbook() {
               value={name}
               onChange={(e) => setName(e.target.value)}
               placeholder="이름"
-              className="w-full px-3.5 py-2.5 bg-light-beige rounded-xl text-[13px] text-soft-black
+              className="min-w-0 w-full px-3.5 py-2.5 bg-light-beige rounded-xl text-[13px] text-soft-black
                          outline-none focus:ring-1 focus:ring-gold-beige/50 transition-shadow"
               required
             />
@@ -138,7 +138,7 @@ export default function Guestbook() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               placeholder="비밀번호"
-              className="w-full px-3.5 py-2.5 bg-light-beige rounded-xl text-[13px] text-soft-black
+              className="min-w-0 w-full px-3.5 py-2.5 bg-light-beige rounded-xl text-[13px] text-soft-black
                          outline-none focus:ring-1 focus:ring-gold-beige/50 transition-shadow"
               required
             />
