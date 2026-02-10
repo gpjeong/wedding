@@ -43,6 +43,24 @@ npm run deploy   # GitHub Pages 배포
 
 배포 URL: https://gpjeong.github.io/wedding/
 
+### 사이트 공개/비공개 전환
+
+`gh` CLI를 통해 GitHub Pages를 켜고 끌 수 있습니다.
+
+```bash
+# 사이트 내리기 (비공개 전환 → 접속 시 404)
+npm run site:down
+
+# 사이트 올리기 (공개 전환 → 기존 빌드 즉시 서빙)
+npm run site:up
+
+# 상태 확인
+gh api repos/gpjeong/wedding/pages
+```
+
+> `site:up`은 `gh-pages` 브랜치의 기존 빌드를 그대로 서빙하므로 재빌드가 필요 없습니다.
+> 코드를 수정한 경우에만 `npm run build && npm run deploy`를 실행하세요.
+
 ## 프로젝트 구조
 
 ```
