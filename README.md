@@ -45,13 +45,13 @@ npm run deploy   # GitHub Pages 배포
 
 ### 사이트 공개/비공개 전환
 
-`gh` CLI를 통해 GitHub Pages를 켜고 끌 수 있습니다.
+`gh` CLI를 통해 GitHub Pages 소스 브랜치를 전환하여 사이트를 내리고 올릴 수 있습니다.
 
 ```bash
-# 사이트 내리기 (비공개 전환 → 접속 시 404)
+# 사이트 내리기 (소스를 main으로 전환 → 빌드 파일 없어 404)
 npm run site:down
 
-# 사이트 올리기 (공개 전환 → 기존 빌드 즉시 서빙)
+# 사이트 올리기 (소스를 gh-pages로 복원 → 기존 빌드 즉시 서빙)
 npm run site:up
 
 # 상태 확인
