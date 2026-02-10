@@ -45,21 +45,15 @@ npm run deploy   # GitHub Pages 배포
 
 ### 사이트 공개/비공개 전환
 
-`gh` CLI를 통해 GitHub Pages 소스 브랜치를 전환하여 사이트를 내리고 올릴 수 있습니다.
+빈 페이지를 gh-pages에 덮어써서 사이트를 내리고, 다시 빌드+배포하여 올릴 수 있습니다.
 
 ```bash
-# 사이트 내리기 (소스를 main으로 전환 → 빌드 파일 없어 404)
+# 사이트 내리기 (빈 페이지로 덮어쓰기 → 빈 화면)
 npm run site:down
 
-# 사이트 올리기 (소스를 gh-pages로 복원 → 기존 빌드 즉시 서빙)
+# 사이트 올리기 (빌드 + 배포)
 npm run site:up
-
-# 상태 확인
-gh api repos/gpjeong/wedding/pages
 ```
-
-> `site:up`은 `gh-pages` 브랜치의 기존 빌드를 그대로 서빙하므로 재빌드가 필요 없습니다.
-> 코드를 수정한 경우에만 `npm run build && npm run deploy`를 실행하세요.
 
 ## 프로젝트 구조
 

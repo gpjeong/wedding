@@ -8,8 +8,8 @@
     "build": "tsc -b && vite build",
     "preview": "vite preview",
     "deploy": "gh-pages -d dist",
-    "site:down": "gh api -X PUT repos/gpjeong/wedding/pages -f build_type=legacy -f source[branch]=main -f source[path]=/",
-    "site:up": "gh api -X PUT repos/gpjeong/wedding/pages -f build_type=legacy -f source[branch]=gh-pages -f source[path]=/",
+    "site:down": "mkdir -p /tmp/_empty && echo '<html><body></body></html>' > /tmp/_empty/index.html && gh-pages -d /tmp/_empty",
+    "site:up": "npm run build && npm run deploy",
     "lint": "eslint ."
   },
   "dependencies": {
