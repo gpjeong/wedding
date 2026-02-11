@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="600" viewBox="0 0 600 600">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#F5EDE3"/>
+      <stop offset="100%" style="stop-color:#E0CBAF"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="45%" r="45%">
+      <stop offset="0%" style="stop-color:#D4A574;stop-opacity:0.12"/>
+      <stop offset="100%" style="stop-color:#D4A574;stop-opacity:0"/>
+    </radialGradient>
+    <linearGradient id="goldFade" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#8B7355;stop-opacity:0"/>
+      <stop offset="50%" style="stop-color:#8B7355;stop-opacity:0.35"/>
+      <stop offset="100%" style="stop-color:#8B7355;stop-opacity:0"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="600" height="600" fill="url(#bg)"/>
+  <rect width="600" height="600" fill="url(#glow)"/>
+
+  <!-- Overlapping circles - Venn-like -->
+  <circle cx="260" cy="280" r="120" fill="none" stroke="#C9956B" stroke-width="0.5" opacity="0.15"/>
+  <circle cx="340" cy="280" r="120" fill="none" stroke="#C9956B" stroke-width="0.5" opacity="0.15"/>
+  <circle cx="300" cy="330" r="120" fill="none" stroke="#8B7355" stroke-width="0.3" opacity="0.1"/>
+
+  <!-- Horizontal ornamental lines -->
+  <line x1="150" y1="230" x2="450" y2="230" stroke="url(#goldFade)" stroke-width="0.5"/>
+  <line x1="180" y1="370" x2="420" y2="370" stroke="url(#goldFade)" stroke-width="0.5"/>
+
+  <!-- Small diamond accents on lines -->
+  <polygon points="300,225 304,230 300,235 296,230" fill="#C9956B" opacity="0.25"/>
+  <polygon points="300,365 304,370 300,375 296,370" fill="#C9956B" opacity="0.25"/>
+
+  <!-- Decorative wave -->
+  <path d="M150 200 Q200 190 250 200 Q300 210 350 200 Q400 190 450 200" fill="none" stroke="#C9956B" stroke-width="0.4" opacity="0.15"/>
+  <path d="M150 400 Q200 410 250 400 Q300 390 350 400 Q400 410 450 400" fill="none" stroke="#C9956B" stroke-width="0.4" opacity="0.15"/>
+
+  <!-- Text -->
+  <text x="300" y="295" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="26" fill="#3D3D3D" letter-spacing="2" opacity="0.65">Photo 5</text>
+  <text x="300" y="325" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="12" fill="#8B7355" letter-spacing="5" font-style="italic" opacity="0.4">Gallery</text>
+
+  <!-- Corner decorations - small curves -->
+  <path d="M40 40 Q70 40 70 70" fill="none" stroke="#C9956B" stroke-width="0.8" opacity="0.25"/>
+  <path d="M560 40 Q530 40 530 70" fill="none" stroke="#C9956B" stroke-width="0.8" opacity="0.25"/>
+  <path d="M40 560 Q70 560 70 530" fill="none" stroke="#C9956B" stroke-width="0.8" opacity="0.25"/>
+  <path d="M560 560 Q530 560 530 530" fill="none" stroke="#C9956B" stroke-width="0.8" opacity="0.25"/>
+
+  <!-- Scattered dots -->
+  <circle cx="150" cy="130" r="2" fill="#C9956B" opacity="0.18"/>
+  <circle cx="460" cy="150" r="2.5" fill="#8B7355" opacity="0.12"/>
+  <circle cx="130" cy="460" r="2" fill="#C9956B" opacity="0.15"/>
+  <circle cx="470" cy="470" r="2" fill="#8B7355" opacity="0.15"/>
+  <circle cx="300" cy="150" r="1.5" fill="#C9956B" opacity="0.2"/>
+  <circle cx="300" cy="470" r="1.5" fill="#C9956B" opacity="0.2"/>
+</svg>
