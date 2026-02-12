@@ -117,8 +117,8 @@ export const weddingConfig = {
 
   // OG 메타 태그
   meta: {
-    title: '정광필 ♥ 우은정 결혼식에 초대합니다',
-    description: '2026년 10월 17일 토요일 오후 1시 30분',
-    siteUrl: 'https://yourusername.github.io/wedding',
+    title: '광필 ♥ 은정 결혼 합니다',
+    description: '2026년 10월 17일 (토)\n오후 1시 30분',
+    siteUrl: 'https://gpjeong.github.io/wedding',
   },
 };

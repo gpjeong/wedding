@@ -36,6 +36,9 @@ export default function Share() {
     console.log('[Kakao Share] currentUrl:', currentUrl);
     console.log('[Kakao Share] imageUrl:', imageUrl);
 
+    const { lat, lng } = weddingConfig.wedding.location;
+    const locationUrl = `https://map.naver.com/p/entry/place/${lat},${lng}`;
+
     window.Kakao.Share.sendDefault({
       objectType: 'feed',
       content: {
@@ -53,6 +56,13 @@ export default function Share() {
           link: {
             mobileWebUrl: currentUrl,
             webUrl: currentUrl,
+          },
+        },
+        {
+          title: '위치 보기',
+          link: {
+            mobileWebUrl: locationUrl,
+            webUrl: locationUrl,
           },
         },
       ],
