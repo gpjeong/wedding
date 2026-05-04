@@ -19,25 +19,40 @@ function App() {
   const { isPlaying, play, toggle } = useAudio('/bgm.mp3');
   const bgmStarted = useRef(false);
 
-  // 첫 번째 사용자 인터랙션(터치/클릭) 시 BGM 자동 재생
+  // 첫 번째 사용자 인터랙션 시 BGM 자동 재생
   useEffect(() => {
     if (!weddingConfig.features.bgm) return;
 
+    const events: Array<keyof DocumentEventMap> = [
+      'click',
+      'touchstart',
+      'touchend',
+      'pointerdown',
+      'keydown',
+      'scroll',
+      'wheel',
+    ];
+
     const startBgm = () => {
-      if (!bgmStarted.current) {
-        bgmStarted.current = true;
-        play();
-      }
-      document.removeEventListener('click', startBgm);
-      document.removeEventListener('touchstart', startBgm);
+      if (bgmStarted.current) return;
+      bgmStarted.current = true;
+      play();
+      events.forEach((evt) => {
+        document.removeEventListener(evt, startBgm);
+        window.removeEventListener(evt, startBgm);
+      });
     };
 
-    document.addEventListener('click', startBgm, { once: true });
-    document.addEventListener('touchstart', startBgm, { once: true });
+    events.forEach((evt) => {
+      document.addEventListener(evt, startBgm, { passive: true });
+      window.addEventListener(evt, startBgm, { passive: true });
+    });
 
     return () => {
-      document.removeEventListener('click', startBgm);
-      document.removeEventListener('touchstart', startBgm);
+      events.forEach((evt) => {
+        document.removeEventListener(evt, startBgm);
+        window.removeEventListener(evt, startBgm);
+      });
     };
   }, [play]);
 
