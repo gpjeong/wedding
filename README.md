@@ -41,7 +41,7 @@ npm run build    # 프로덕션 빌드
 npm run deploy   # GitHub Pages 배포
 ```
 
-배포 URL: https://gpjeong.github.io/wedding/
+배포 URL: https://wedding1017.com/
 
 ### 사이트 공개/비공개 전환
 

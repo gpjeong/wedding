@@ -119,6 +119,6 @@ export const weddingConfig = {
   meta: {
     title: '광필 ♥ 은정 결혼 합니다',
     description: '2026년 10월 17일 (토)\n오후 1시 30분',
-    siteUrl: 'https://gpjeong.github.io/wedding',
+    siteUrl: 'https://wedding1017.com',
   },
 };
