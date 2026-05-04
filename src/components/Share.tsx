@@ -28,9 +28,13 @@ export default function Share() {
       window.Kakao.init(weddingConfig.kakao.jsKey);
     }
 
-    // 현재 접속 URL 사용 (로컬/배포 환경 모두 대응)
-    const currentUrl = window.location.origin + import.meta.env.BASE_URL;
-    const imageUrl = currentUrl + weddingConfig.kakao.shareImage.replace(/^\//, '').replace(import.meta.env.BASE_URL, '');
+    // 공유는 항상 프로덕션 도메인으로 고정 (로컬 개발 중 공유해도 배포 사이트로 연결)
+    const siteUrl = weddingConfig.meta.siteUrl.replace(/\/$/, '');
+    const currentUrl = siteUrl + '/';
+    const imagePath = weddingConfig.kakao.shareImage
+      .replace(import.meta.env.BASE_URL, '/')
+      .replace(/^\/+/, '/');
+    const imageUrl = siteUrl + imagePath;
 
     console.log('[Kakao Share] initialized:', window.Kakao.isInitialized());
     console.log('[Kakao Share] currentUrl:', currentUrl);
@@ -70,7 +74,7 @@ export default function Share() {
   };
 
   const copyLink = async () => {
-    const currentUrl = window.location.origin + import.meta.env.BASE_URL;
+    const currentUrl = weddingConfig.meta.siteUrl.replace(/\/$/, '') + '/';
     try {
       await navigator.clipboard.writeText(currentUrl);
     } catch {
