@@ -33,8 +33,8 @@ export const weddingConfig = {
     mother: { name: '이화자', alive: true, phone: '010-2275-4311' },
     familyOrder: '삼녀',
     account: {
-      bank: '카카오뱅크',
-      number: '3333-01-1234567',
+      bank: '토스뱅크',
+      number: '1000-6556-4147',
       holder: '우은정',
     },
     motherAccount: {
