@@ -38,8 +38,8 @@ export const weddingConfig = {
       holder: '우은정',
     },
     motherAccount: {
-      bank: '하나은행',
-      number: '777-888-999',
+      bank: '기업은행',
+      number: '231-027259-01-028',
       holder: '이화자',
     },
   },
