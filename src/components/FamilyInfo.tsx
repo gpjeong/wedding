@@ -93,9 +93,9 @@ export default function FamilyInfo() {
             </p>
             <PersonContact label="신랑" name={groom.name} phone={groom.phone} />
             <div className="w-full h-[0.5px] bg-gold-beige/15 my-1" />
-            <PersonContact label="부" name={groom.father.name} phone="010-0000-0000" alive={groom.father.alive} />
+            <PersonContact label="부" name={groom.father.name} phone={groom.father.phone} alive={groom.father.alive} />
             <div className="w-full h-[0.5px] bg-gold-beige/15 my-1" />
-            <PersonContact label="모" name={groom.mother.name} phone="010-0000-0000" alive={groom.mother.alive} />
+            <PersonContact label="모" name={groom.mother.name} phone={groom.mother.phone} alive={groom.mother.alive} />
           </motion.div>
 
           {/* Bride side */}
@@ -111,9 +111,9 @@ export default function FamilyInfo() {
             </p>
             <PersonContact label="신부" name={bride.name} phone={bride.phone} />
             <div className="w-full h-[0.5px] bg-gold-beige/15 my-1" />
-            <PersonContact label="부" name={bride.father.name} phone="010-0000-0000" alive={bride.father.alive} />
+            <PersonContact label="부" name={bride.father.name} phone={bride.father.phone} alive={bride.father.alive} />
             <div className="w-full h-[0.5px] bg-gold-beige/15 my-1" />
-            <PersonContact label="모" name={bride.mother.name} phone="010-0000-0000" alive={bride.mother.alive} />
+            <PersonContact label="모" name={bride.mother.name} phone={bride.mother.phone} alive={bride.mother.alive} />
           </motion.div>
         </div>
       </motion.div>

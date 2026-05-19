@@ -6,10 +6,9 @@ export const weddingConfig = {
   // 기본 정보
   groom: {
     name: '정광필',
-    englishName: 'Gildong',
     phone: '010-1234-5678',
-    father: { name: '정환식', alive: true },
-    mother: { name: '성경수', alive: true },
+    father: { name: '정환식', alive: true, phone: '010-2050-3569' },
+    mother: { name: '성경수', alive: true, phone: '010-4779-3569' },
     familyOrder: '장남',
     account: {
       bank: '국민은행',
@@ -17,22 +16,21 @@ export const weddingConfig = {
       holder: '정광필',
     },
     fatherAccount: {
-      bank: '우리은행',
-      number: '111-222-333',
+      bank: '국민은행',
+      number: '404-21-0681-426',
       holder: '정환식',
     },
     motherAccount: {
-      bank: '신한은행',
-      number: '444-555-666',
+      bank: '국민은행',
+      number: '612-01-0517-466',
       holder: '성경수',
     },
   },
   bride: {
     name: '우은정',
-    englishName: 'Chunhyang',
     phone: '010-9876-5432',
-    father: { name: '우대호', alive: false },
-    mother: { name: '이화자', alive: true },
+    father: { name: '우대호', alive: false, phone: '010-0000-0000' },
+    mother: { name: '이화자', alive: true, phone: '010-2275-4311' },
     familyOrder: '삼녀',
     account: {
       bank: '카카오뱅크',
