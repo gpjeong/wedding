@@ -6,7 +6,7 @@ export const weddingConfig = {
   // 기본 정보
   groom: {
     name: '정광필',
-    phone: '010-1234-5678',
+    phone: '010-5092-3569',
     father: { name: '정환식', alive: true, phone: '010-2050-3569' },
     mother: { name: '성경수', alive: true, phone: '010-4779-3569' },
     familyOrder: '장남',
@@ -28,7 +28,7 @@ export const weddingConfig = {
   },
   bride: {
     name: '우은정',
-    phone: '010-9876-5432',
+    phone: '010-8966-4310',
     father: { name: '우대호', alive: false, phone: '010-0000-0000' },
     mother: { name: '이화자', alive: true, phone: '010-2275-4311' },
     familyOrder: '삼녀',
