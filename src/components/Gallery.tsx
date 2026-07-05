@@ -5,6 +5,9 @@ import { weddingConfig } from '../config/wedding';
 
 const PREVIEW_COUNT = 6;
 
+// 정사각형 그리드로 자를 때 얼굴이 위쪽에 몰려 있어 상단 기준으로 잘라야 하는 사진 (0-based index)
+const TOP_ALIGNED_INDEXES = new Set([1, 2, 3, 4, 5, 9, 10, 12, 15]);
+
 export default function Gallery() {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
   const [expanded, setExpanded] = useState(false);
@@ -95,8 +98,10 @@ export default function Gallery() {
                 src={src}
                 alt={`웨딩 사진 ${index + 1}`}
                 loading="lazy"
-                className="w-full h-full object-cover transition-transform duration-500
-                           group-hover:scale-105"
+                className={`w-full h-full object-cover transition-transform duration-500
+                           group-hover:scale-105 ${
+                             TOP_ALIGNED_INDEXES.has(index) ? 'object-top' : ''
+                           }`}
               />
               {/* Hover overlay */}
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
