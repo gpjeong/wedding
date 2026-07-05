@@ -58,21 +58,21 @@ export default function FamilyInfo() {
         <div className="text-center mb-10">
           <div className="font-serif text-[15px] text-soft-black leading-[2.4]">
             <p>
-              <span className="text-warm-brown/60 text-[13px]">
-                {!groom.father.alive && <span className="text-warm-brown/40">故 </span>}
-                {groom.father.name} · {!groom.mother.alive && <span className="text-warm-brown/40">故 </span>}{groom.mother.name}
+              <span className="text-warm-brown text-[15px]">
+                {!groom.father.alive && <span className="text-warm-brown/50">故 </span>}
+                {groom.father.name} · {!groom.mother.alive && <span className="text-warm-brown/50">故 </span>}{groom.mother.name}
               </span>
               <span className="text-warm-brown/40 mx-2">의</span>
-              <span className="text-warm-brown/60 text-[13px]">{groom.familyOrder}</span>
+              <span className="text-warm-brown text-[14px]">{groom.familyOrder}</span>
               <span className="ml-2 text-[18px] font-bold">{groom.name}</span>
             </p>
             <p>
-              <span className="text-warm-brown/60 text-[13px]">
-                {!bride.father.alive && <span className="text-warm-brown/40">故 </span>}
-                {bride.father.name} · {!bride.mother.alive && <span className="text-warm-brown/40">故 </span>}{bride.mother.name}
+              <span className="text-warm-brown text-[15px]">
+                {!bride.father.alive && <span className="text-warm-brown/50">故 </span>}
+                {bride.father.name} · {!bride.mother.alive && <span className="text-warm-brown/50">故 </span>}{bride.mother.name}
               </span>
               <span className="text-warm-brown/40 mx-2">의</span>
-              <span className="text-warm-brown/60 text-[13px]">{bride.familyOrder}</span>
+              <span className="text-warm-brown text-[14px]">{bride.familyOrder}</span>
               <span className="ml-2 text-[18px] font-bold">{bride.name}</span>
             </p>
           </div>
