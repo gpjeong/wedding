@@ -86,8 +86,8 @@ export const weddingConfig = {
   kakao: {
     jsKey: '1fc4d9ed95ff86f64cd7bf04a7a2bed0',
     shareImage: asset('/images/share-thumbnail.png'),
-    shareImageWidth: 858,
-    shareImageHeight: 1544,
+    shareImageWidth: 854,
+    shareImageHeight: 1436,
   },
 
   // Firebase 설정
