@@ -17,9 +17,24 @@ import { db } from '../lib/firebase';
 interface GuestbookEntry {
   id: string;
   name: string;
-  password: string;
+  passwordHash: string;
+  salt: string;
   message: string;
   createdAt: { seconds: number } | null;
+}
+
+// 16바이트 랜덤 salt 생성 (hex)
+function makeSalt(): string {
+  const arr = new Uint8Array(16);
+  crypto.getRandomValues(arr);
+  return Array.from(arr, (b) => b.toString(16).padStart(2, '0')).join('');
+}
+
+// salt + 비밀번호를 SHA-256 해시 (hex). 평문은 절대 저장하지 않음
+async function hashPassword(password: string, salt: string): Promise<string> {
+  const data = new TextEncoder().encode(salt + password);
+  const digest = await crypto.subtle.digest('SHA-256', data);
+  return Array.from(new Uint8Array(digest), (b) => b.toString(16).padStart(2, '0')).join('');
 }
 
 export default function Guestbook() {
@@ -53,9 +68,12 @@ export default function Guestbook() {
 
     setLoading(true);
     try {
+      const salt = makeSalt();
+      const passwordHash = await hashPassword(password.trim(), salt);
       await addDoc(collection(db, 'guestbook'), {
         name: name.trim(),
-        password: password.trim(),
+        passwordHash,
+        salt,
         message: message.trim(),
         createdAt: serverTimestamp(),
       });
@@ -74,7 +92,8 @@ export default function Guestbook() {
     const inputPassword = prompt('비밀번호를 입력해주세요.');
     if (!inputPassword) return;
 
-    if (inputPassword !== entry.password) {
+    const inputHash = await hashPassword(inputPassword, entry.salt);
+    if (inputHash !== entry.passwordHash) {
       alert('비밀번호가 일치하지 않습니다.');
       return;
     }
