@@ -13,6 +13,14 @@ export default function Gallery() {
 
   const closeLightbox = useCallback(() => setSelectedIndex(null), []);
 
+  // 갤러리 이미지 미리 로드 (슬라이드 시 깜빡임 방지)
+  useEffect(() => {
+    images.forEach((src) => {
+      const img = new Image();
+      img.src = src;
+    });
+  }, [images]);
+
   // 라이트박스가 열려 있는 동안 뒤 페이지 스크롤 잠금
   useEffect(() => {
     if (selectedIndex === null) return;
@@ -165,20 +173,13 @@ export default function Gallery() {
               onTouchStart={handleTouchStart}
               onTouchEnd={handleTouchEnd}
             >
-              <AnimatePresence mode="wait">
-                <motion.img
-                  key={selectedIndex}
-                  src={images[selectedIndex]}
-                  alt={`확대 사진 ${selectedIndex + 1}`}
-                  className="max-w-full max-h-[80vh] object-contain select-none"
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.9 }}
-                  transition={{ duration: 0.25 }}
-                  onClick={(e) => e.stopPropagation()}
-                  draggable={false}
-                />
-              </AnimatePresence>
+              <img
+                src={images[selectedIndex]}
+                alt={`확대 사진 ${selectedIndex + 1}`}
+                className="max-w-full max-h-[80vh] object-contain select-none"
+                onClick={(e) => e.stopPropagation()}
+                draggable={false}
+              />
             </div>
           </motion.div>
         )}
