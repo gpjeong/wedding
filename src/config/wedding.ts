@@ -85,7 +85,7 @@ export const weddingConfig = {
   // 카카오 설정
   kakao: {
     jsKey: '1fc4d9ed95ff86f64cd7bf04a7a2bed0',
-    shareImage: asset('/images/share-thumbnail.png'),
+    shareImage: asset('/images/share-thumbnail-v2.png'),
     shareImageWidth: 854,
     shareImageHeight: 1024,
   },
