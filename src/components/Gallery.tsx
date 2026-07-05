@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, ChevronLeft, ChevronRight, ChevronDown } from 'lucide-react';
 import { weddingConfig } from '../config/wedding';
@@ -12,6 +12,16 @@ export default function Gallery() {
   const visibleImages = expanded ? images : images.slice(0, PREVIEW_COUNT);
 
   const closeLightbox = useCallback(() => setSelectedIndex(null), []);
+
+  // 라이트박스가 열려 있는 동안 뒤 페이지 스크롤 잠금
+  useEffect(() => {
+    if (selectedIndex === null) return;
+    const original = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.body.style.overflow = original;
+    };
+  }, [selectedIndex]);
 
   const goNext = useCallback(() => {
     setSelectedIndex((prev) => (prev !== null ? (prev + 1) % images.length : null));
@@ -112,7 +122,7 @@ export default function Gallery() {
       <AnimatePresence>
         {selectedIndex !== null && (
           <motion.div
-            className="fixed inset-0 z-[70] bg-black/95 flex flex-col items-center justify-center"
+            className="fixed inset-0 z-[70] bg-black flex flex-col items-center justify-center"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
