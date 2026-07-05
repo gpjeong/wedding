@@ -49,6 +49,8 @@ export default function Share() {
         title: weddingConfig.meta.title,
         description: weddingConfig.meta.description,
         imageUrl,
+        imageWidth: weddingConfig.kakao.shareImageWidth,
+        imageHeight: weddingConfig.kakao.shareImageHeight,
         link: {
           mobileWebUrl: currentUrl,
           webUrl: currentUrl,
