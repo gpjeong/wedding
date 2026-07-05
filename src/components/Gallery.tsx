@@ -1,11 +1,15 @@
 import { useState, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, ChevronLeft, ChevronRight } from 'lucide-react';
+import { X, ChevronLeft, ChevronRight, ChevronDown } from 'lucide-react';
 import { weddingConfig } from '../config/wedding';
+
+const PREVIEW_COUNT = 6;
 
 export default function Gallery() {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
+  const [expanded, setExpanded] = useState(false);
   const images = weddingConfig.gallery;
+  const visibleImages = expanded ? images : images.slice(0, PREVIEW_COUNT);
 
   const closeLightbox = useCallback(() => setSelectedIndex(null), []);
 
@@ -54,14 +58,18 @@ export default function Gallery() {
 
         {/* Photo grid */}
         <div className="grid grid-cols-3 gap-[3px] rounded-lg overflow-hidden">
-          {images.map((src, index) => (
+          {visibleImages.map((src, index) => (
             <motion.div
               key={index}
               className="aspect-square overflow-hidden cursor-pointer relative group"
               initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
+              animate={index >= PREVIEW_COUNT ? { opacity: 1, scale: 1 } : undefined}
+              whileInView={index < PREVIEW_COUNT ? { opacity: 1, scale: 1 } : undefined}
               viewport={{ once: true }}
-              transition={{ delay: index * 0.05, duration: 0.4 }}
+              transition={{
+                delay: (index % PREVIEW_COUNT) * 0.05,
+                duration: 0.4,
+              }}
               whileTap={{ scale: 0.97 }}
               onClick={() => setSelectedIndex(index)}
             >
@@ -77,6 +85,27 @@ export default function Gallery() {
             </motion.div>
           ))}
         </div>
+
+        {/* 더보기 / 접기 버튼 */}
+        {images.length > PREVIEW_COUNT && (
+          <div className="text-center mt-7">
+            <button
+              onClick={() => setExpanded((v) => !v)}
+              className="inline-flex items-center gap-2 px-7 py-2.5 rounded-full
+                         border border-gold-beige/40 text-soft-black text-[13px] tracking-wider
+                         active:scale-95 transition-transform bg-ivory/50"
+              aria-expanded={expanded}
+            >
+              {expanded ? '접기' : '사진 더보기'}
+              <ChevronDown
+                size={16}
+                className={`text-gold-beige transition-transform duration-300 ${
+                  expanded ? 'rotate-180' : ''
+                }`}
+              />
+            </button>
+          </div>
+        )}
       </motion.div>
 
       {/* Lightbox modal */}

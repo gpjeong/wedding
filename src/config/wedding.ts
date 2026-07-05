@@ -50,7 +50,7 @@ export const weddingConfig = {
     location: {
       name: 'DMC타워웨딩',
       hall: '펠리체홀 4층',
-      address: '서울 마포구 상암로 189 중소기업DMC타워',
+      address: '서울 마포구 성암로 189 중소기업DMC타워',
       lat: 37.5767396,
       lng: 126.8979123,
       tel: '0507-1318-9308',
@@ -68,18 +68,30 @@ export const weddingConfig = {
 저희 두 사람이 사랑의 이름으로 지켜나갈 수 있게
 앞날을 축복해 주시면 감사하겠습니다.`,
 
-  // 갤러리 이미지 (public/images/ 경로)
+  // 갤러리 이미지 (public/images/ 경로, 색감 순서: 밝은 낮 → 블루 → 핑크 → 노을 → 밤)
   gallery: [
-    asset('/images/photo1.svg'),
-    asset('/images/photo2.svg'),
-    asset('/images/photo3.svg'),
-    asset('/images/photo4.svg'),
-    asset('/images/photo5.svg'),
-    asset('/images/photo6.svg'),
+    asset('/images/gallery-01.jpg'),
+    asset('/images/gallery-02.jpg'),
+    asset('/images/gallery-03.jpg'),
+    asset('/images/gallery-04.jpg'),
+    asset('/images/gallery-05.jpg'),
+    asset('/images/gallery-06.jpg'),
+    asset('/images/gallery-07.jpg'),
+    asset('/images/gallery-08.jpg'),
+    asset('/images/gallery-09.jpg'),
+    asset('/images/gallery-10.jpg'),
+    asset('/images/gallery-11.jpg'),
+    asset('/images/gallery-12.jpg'),
+    asset('/images/gallery-13.jpg'),
+    asset('/images/gallery-14.jpg'),
+    asset('/images/gallery-15.jpg'),
+    asset('/images/gallery-16.jpg'),
+    asset('/images/gallery-17.jpg'),
+    asset('/images/gallery-18.jpg'),
   ],
 
   // 메인/커버 이미지
-  mainPhoto: asset('/images/main.svg'),
+  mainPhoto: asset('/images/main.jpg'),
   introPhoto: asset('/images/intro.svg'),
 
   // 카카오 설정
