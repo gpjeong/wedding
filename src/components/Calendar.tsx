@@ -130,7 +130,7 @@ export default function Calendar() {
             ) : (
               <>
                 <p className="text-warm-brown/60 text-[13px] tracking-wider mb-5">
-                  결혼식까지
+                  {countdown.dDay === 0 ? '오늘 결혼합니다' : '결혼식까지'}
                 </p>
                 <div className="flex justify-center gap-6">
                   {[
@@ -150,7 +150,7 @@ export default function Calendar() {
                   ))}
                 </div>
                 <p className="mt-6 font-serif text-[14px] text-gold-beige/80">
-                  D-{countdown.days}
+                  {countdown.dDay === 0 ? 'D-Day' : `D-${countdown.dDay}`}
                 </p>
               </>
             )}
