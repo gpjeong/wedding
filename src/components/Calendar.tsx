@@ -125,7 +125,7 @@ export default function Calendar() {
 
             {countdown.isExpired ? (
               <p className="font-serif text-[15px] text-gold-beige">
-                결혼식이 진행되었습니다
+                결혼식에 참석해주셔서 감사합니다
               </p>
             ) : (
               <>
